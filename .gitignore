@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+
+# next.js
+.next/
+out/
+
+# build
+build/
+dist/
+
+# environment
+.env*.local
+.env
+
+# debug
+npm-debug.log*
+
+# misc
+.DS_Store
+*.tsbuildinfo
+.next-auth/
+
+# OS
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test coverage
+coverage/
+
+# Storybook
+storybook-static/
+.temp/

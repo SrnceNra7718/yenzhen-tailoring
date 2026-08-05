@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-unused-vars": "warn",
+    "@next/next/no-html-link-for-pages": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/alt-text": "warn",
+    "no-restricted-imports": [
+      "warn",
+      {
+        "paths": [
+          {
+            "name": "lucide-react",
+            "message": "Please use named imports for better tree-shaking."
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
