@@ -1,0 +1,16 @@
+{
+  "name": "Yenzhen Tailoring",
+  "short_name": "Yenzhen",
+  "description": "Premium custom sublimation sportswear",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#11100f",
+  "theme_color": "#e4a31c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ]
+}

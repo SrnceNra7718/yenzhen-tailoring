@@ -1,43 +1,33 @@
-# dependencies
-node_modules/
+# Dependencies
+node_modules
 .pnp
 .pnp.js
-.yarn/cache
-.yarn/unplugged
 
-# next.js
-.next/
-out/
+# Build outputs
+.next
+out
+build
+dist
 
-# build
-build/
-dist/
-
-# environment
+# Environment
 .env*.local
 .env
 
-# debug
+# Debug
 npm-debug.log*
-
-# misc
-.DS_Store
-*.tsbuildinfo
-.next-auth/
+yarn-debug.log*
+yarn-error.log*
 
 # OS
+.DS_Store
 Thumbs.db
 
 # IDE
-.vscode/
-.idea/
+.vscode
+.idea
 *.swp
 *.swo
 *~
 
 # Test coverage
-coverage/
-
-# Storybook
-storybook-static/
-.temp/
+coverage

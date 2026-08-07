@@ -4,7 +4,6 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
-import { ThemeProvider } from '@/components/providers/theme-provider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,12 +17,13 @@ const displayFont = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://yenzhen-tailoring.vercel.app'),
   title: {
     default: 'YENZHEN TAILORING | Premium Custom Sportswear',
     template: '%s | YENZHEN TAILORING',
   },
   description:
-    'YenZhen Tailoring – Premium custom sublimation sportswear. Basketball jerseys, shorts, hoodies, tank tops, and muse uniforms. Request your free quote today!',
+    'YenZhen Tailoring creates premium custom sublimation sportswear — basketball jerseys, hoodies, uniforms, and more. Request a quote today.',
   keywords: [
     'custom basketball jerseys',
     'sublimation sportswear',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     'basketball uniforms',
     'sportswear manufacturer',
     'custom hoodie printing',
+    'team uniforms',
   ],
   authors: [{ name: 'YenZhen Tailoring' }],
   creator: 'YenZhen Tailoring',
@@ -82,27 +83,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
@@ -112,23 +95,10 @@ export default function RootLayout({
           'font-sans antialiased bg-background'
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-          storageKey="yenzhen-theme"
-        >
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   )
-}
-
-function Toaster() {
-  return null
 }
