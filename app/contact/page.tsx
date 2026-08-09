@@ -15,9 +15,9 @@ export default function ContactPage() {
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold gradient-text tracking-tight mb-4">
             Contact Us
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a question or need a custom quote? We would love to hear from you.
-          </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Need a custom quote for sublimation basketball jerseys or a full team package? We would love to help.
+            </p>
         </div>
       </section>
 
@@ -143,7 +143,7 @@ export default function ContactPage() {
                       required
                       rows={5}
                       className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"
-                      placeholder="Tell us about your project..."
+                       placeholder="Tell us about your basketball team or sublimation project..."
                     />
                   </div>
                   <Button type="submit" size="lg" className="w-full">

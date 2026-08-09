@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Sparkles } from 'lucide-react'
@@ -22,15 +22,16 @@ export function Navbar() {
     setMobileOpen(false)
   }, [pathname])
 
-  const handleNavClick = useCallback((href: string) => {
-    if (href.startsWith('#')) {
-      setMobileOpen(false)
-      const el = document.querySelector(href)
+  useEffect(() => {
+    if (pathname === '/' && window.location.hash) {
+      const el = document.querySelector(window.location.hash)
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
       }
     }
-  }, [])
+  }, [pathname])
 
   return (
     <nav
@@ -43,7 +44,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-600">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-gold-500 shadow-lg shadow-brand-500/20">
             <Sparkles className="h-5 w-5 text-white" />
           </div>
           <span className="font-display text-lg font-bold gradient-text">
@@ -53,18 +54,7 @@ export function Navbar() {
 
         <div className="hidden md:flex md:items-center md:space-x-1">
           {navLinks.map((item) => {
-            const isActive = pathname === item.href
-            if (item.href.startsWith('#')) {
-              return (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="nav-link"
-                >
-                  {item.name}
-                </button>
-              )
-            }
+            const isActive = pathname === item.href || (item.href.startsWith('/#') && pathname === '/')
             return (
               <Link
                 key={item.name}
@@ -81,12 +71,12 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <button
-            onClick={() => handleNavClick('#contact')}
-            className="btn-primary text-sm py-2 px-5"
+          <Link
+            href="/#contact"
+            className="btn-primary text-sm py-2 px-5 inline-flex items-center"
           >
             Get a Quote
-          </button>
+          </Link>
         </div>
 
         <button
@@ -107,20 +97,20 @@ export function Navbar() {
         >
           <div className="space-y-1 px-4 py-3">
             {navLinks.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                onClick={() => handleNavClick(item.href)}
+                href={item.href}
                 className="block w-full text-left rounded-lg px-3 py-2.5 text-base font-medium text-muted-foreground hover:bg-accent/50 hover:text-foreground transition-colors"
               >
                 {item.name}
-              </button>
+              </Link>
             ))}
-            <button
-              onClick={() => handleNavClick('#contact')}
-              className="btn-primary w-full mt-4 text-sm py-2.5"
+            <Link
+              href="/#contact"
+              className="btn-primary w-full mt-4 text-sm py-2.5 inline-flex items-center justify-center"
             >
               Get a Quote
-            </button>
+            </Link>
           </div>
         </div>
       )}

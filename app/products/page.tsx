@@ -24,12 +24,13 @@ export default function ProductsPage() {
     <main className="pt-16">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-dark-800 to-brand-900 py-24">
+        <div className="absolute inset-0 bg-hero-glow opacity-50" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold gradient-text tracking-tight mb-4">
-            Our Products
+            Basketball Sublimation Products
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Browse our full range of premium custom sportswear products.
+            From full sublimation jerseys to complete team warm-up packages — every product designed for basketball performance.
           </p>
         </div>
       </section>
@@ -43,10 +44,10 @@ export default function ProductsPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
+                  'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
                   activeCategory === cat
-                    ? 'bg-brand-500 text-white shadow-md'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                    ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/25 scale-105'
+                    : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/50'
                 )}
               >
                 {cat}

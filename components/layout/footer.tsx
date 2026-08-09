@@ -12,7 +12,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-600">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-gold-500 shadow-lg shadow-brand-500/20">
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
               <span className="font-display text-lg font-bold gradient-text">
@@ -20,7 +20,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Premium custom sublimation sportswear. Quality you can feel, style you can see.
+              Premium sublimation basketball uniforms and team packages. Designed for performance, built to last.
             </p>
           </div>
 
