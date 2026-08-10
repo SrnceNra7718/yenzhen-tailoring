@@ -15,7 +15,7 @@ export function Footer() {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-gold-500 shadow-lg shadow-brand-500/20">
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
-              <span className="font-display text-lg font-bold gradient-text">
+              <span className="font-brush text-xl text-white">
                 YENZHEN
               </span>
             </Link>

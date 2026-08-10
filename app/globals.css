@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Road Rage";
+  src: url("/fonts/RoadRage.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 160 30% 4%;
@@ -103,6 +111,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .font-brush {
+    font-family: "Road Rage", cursive;
+    text-shadow: 
+      2px 2px 0px rgba(0, 0, 0, 0.4),
+      -1px -1px 0px rgba(255, 255, 255, 0.05);
+    letter-spacing: 0.04em;
+    transform: skewX(-2deg);
   }
 
   .section-heading {

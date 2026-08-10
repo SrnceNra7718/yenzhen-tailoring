@@ -1,72 +1,68 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Menu, X, Sparkles } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { navLinks } from '@/data/navigation'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { navLinks } from "@/data/navigation";
 
 export function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    setMobileOpen(false)
-  }, [pathname])
+    setMobileOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
-    if (pathname === '/' && window.location.hash) {
-      const el = document.querySelector(window.location.hash)
+    if (pathname === "/" && window.location.hash) {
+      const el = document.querySelector(window.location.hash);
       if (el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' })
-        }, 100)
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
       }
     }
-  }, [pathname])
+  }, [pathname]);
 
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? 'bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm'
-          : 'bg-transparent'
+          ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm"
+          : "bg-transparent"
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-gold-500 shadow-lg shadow-brand-500/20">
-            <Sparkles className="h-5 w-5 text-white" />
-          </div>
-          <span className="font-display text-lg font-bold gradient-text">
+          <span className="font-brush text-xl text-white">
             YENZHEN
           </span>
         </Link>
 
         <div className="hidden md:flex md:items-center md:space-x-1">
           {navLinks.map((item) => {
-            const isActive = pathname === item.href || (item.href.startsWith('/#') && pathname === '/')
+            const isActive =
+              pathname === item.href ||
+              (item.href.startsWith("/#") && pathname === "/");
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={cn(
-                  'nav-link',
-                  isActive && 'nav-link-active'
-                )}
+                className={cn("nav-link", isActive && "nav-link-active")}
               >
                 {item.name}
               </Link>
-            )
+            );
           })}
         </div>
 
@@ -86,7 +82,11 @@ export function Navbar() {
           aria-controls="mobile-menu"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
@@ -115,5 +115,5 @@ export function Navbar() {
         </div>
       )}
     </nav>
-  )
+  );
 }

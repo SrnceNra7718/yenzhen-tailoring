@@ -84,12 +84,21 @@ function FloatingOrb({
         ease: "easeInOut",
         delay,
       }}
-      className={cn("absolute rounded-full blur-3xl pointer-events-none", className)}
+      className={cn(
+        "absolute rounded-full blur-3xl pointer-events-none",
+        className
+      )}
     />
   );
 }
 
-function StatCard({ stat, index }: { stat: { value: string; label: string }; index: number }) {
+function StatCard({
+  stat,
+  index,
+}: {
+  stat: { value: string; label: string };
+  index: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -149,7 +158,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-brand-950 via-dark-900 to-brand-950" />
         <div className="absolute inset-0 bg-hero-glow opacity-70" />
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
-        
+
         <FloatingOrb
           className="w-[500px] h-[500px] bg-brand-500/10 -top-20 -left-20"
           delay={0}
@@ -163,7 +172,7 @@ export default function HomePage() {
           delay={4}
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:py-40 w-full">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 w-full">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
               <motion.div
@@ -175,7 +184,7 @@ export default function HomePage() {
                 <Shield className="h-4 w-4" />
                 Trusted by teams nationwide
               </motion.div>
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -187,7 +196,7 @@ export default function HomePage() {
                   Uniforms & Sublimation
                 </span>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -198,7 +207,7 @@ export default function HomePage() {
                 warmers, full team packages, and warm-up jackets. Professional
                 quality, unlimited designs, and fast turnaround.
               </motion.p>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -260,42 +269,12 @@ export default function HomePage() {
               <div className="aspect-square rounded-3xl border border-border/50 bg-gradient-to-br from-brand-900/30 to-dark-800 shadow-2xl flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-card-shine" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/5 via-transparent to-gold-500/5" />
-                
-                <div className="text-center relative z-10 p-8">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 via-brand-500 to-gold-500 shadow-2xl shadow-brand-500/20 relative"
-                  >
-                    <div className="absolute inset-2 rounded-full bg-dark-900/20 backdrop-blur-sm" />
-                    <Sparkles className="h-16 w-16 text-white relative z-10" />
-                  </motion.div>
-                  
-                  <p className="font-display text-3xl font-bold text-white tracking-wide">
-                    YENZHEN
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2 tracking-widest uppercase">
-                    Tailored to Perfection
-                  </p>
-                  
-                  <div className="mt-8 flex justify-center gap-3">
-                    {[
-                      "bg-brand-400",
-                      "bg-gold-400",
-                      "bg-brand-500",
-                      "bg-gold-500",
-                      "bg-brand-400",
-                    ].map((c, i) => (
-                      <motion.span
-                        key={i}
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: 0.6, delay: 1 + i * 0.1 }}
-                        className={`h-2 w-8 rounded-full ${c} origin-left`}
-                      />
-                    ))}
-                  </div>
-                </div>
+
+                <img
+                  src="/images/banner.png"
+                  alt="Yenzhen Tailoring Banner"
+                  className="relative w-full h-full object-cover"
+                />
               </div>
 
               <motion.div
@@ -353,7 +332,7 @@ export default function HomePage() {
             title="Complete Basketball Team Packages"
             subtitle="Everything your team needs in one coordinated set. From sublimated jerseys to warm-up jackets, we deliver a unified look that commands attention on the court."
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Main Card */}
             <motion.div
@@ -411,8 +390,8 @@ export default function HomePage() {
                   Warm-Up Sets
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Zip-up jackets and warmers with all-over sublimation. Keep your
-                  team coordinated from warm-ups to game time.
+                  Zip-up jackets and warmers with all-over sublimation. Keep
+                  your team coordinated from warm-ups to game time.
                 </p>
               </div>
             </motion.div>
@@ -457,8 +436,8 @@ export default function HomePage() {
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">
                     From 1 to 100+ players. We handle sizing, quantities, and
-                    deadlines for your whole squad with dedicated support and bulk
-                    pricing.
+                    deadlines for your whole squad with dedicated support and
+                    bulk pricing.
                   </p>
                 </div>
               </div>
@@ -705,7 +684,7 @@ export default function HomePage() {
           className="w-[400px] h-[400px] bg-gold-500/5 -bottom-20 right-1/4"
           delay={3}
         />
-        
+
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative">
           <SectionHeading
             title="Ready to Build Your Team Identity?"
