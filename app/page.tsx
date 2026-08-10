@@ -534,18 +534,6 @@ export default function HomePage() {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">
                   {service.description}
                 </p>
-                {service.features && (
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((f) => (
-                      <span
-                        key={f}
-                        className="text-xs text-brand-300 bg-brand-500/10 px-2.5 py-1 rounded-full"
-                      >
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>

@@ -1,111 +1,336 @@
 export interface Product {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  image: string;
-  featured?: boolean;
+  id: string
+  name: string
+  category: string
+  description: string
+  image: string
+  featured?: boolean
 }
 
 export const products: Product[] = [
+  // Basketball
   {
-    id: "basketball-jersey",
-    name: "Sublimation Basketball Jersey",
-    category: "Basketball",
-    description:
-      "Full-subli jersey with unlimited colors, team name, player numbers, and logos. Breathable mesh fabric built for intense games.",
-    image: "https://images.unsplash.com/photo-1519861531473-9200263931cc?w=600&h=600&fit=crop",
+    id: 'teamEden_basketball_jersey',
+    name: 'Team Eden Basketball Jersey',
+    category: 'Basketball',
+    description: 'Custom sublimation basketball jersey for Team Eden. Full team branding with player names and numbers.',
+    image: '/images/products/basketball/teamEden_basketball_jersey.jpg',
     featured: true,
   },
   {
-    id: "basketball-shorts",
-    name: "Matching Basketball Shorts",
-    category: "Basketball",
-    description:
-      "Elastic-waist performance shorts with sublimated side panels. Lightweight, quick-dry, and designed to match your jersey.",
-    image: "https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=600&h=600&fit=crop",
+    id: 'shinshumaru_basketball_jersey',
+    name: 'Shinshumaru Basketball Jersey',
+    category: 'Basketball',
+    description: 'Custom basketball jersey for Shinshumaru. Vibrant sublimated design built for court performance.',
+    image: '/images/products/basketball/shinshumaru_basketball_jersey.jpg',
     featured: true,
   },
   {
-    id: "basketball-warmer",
-    name: "Basketball Warmer / Sleeve",
-    category: "Basketball",
-    description:
-      "Compression arm sleeve and muscle warmer with full sublimation print. Keeps muscles warm and shows your team pride.",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop",
-    featured: true,
-  },
-  {
-    id: "basketball-warm-up",
-    name: "Team Warm-Up Jacket",
-    category: "Basketball",
-    description:
-      "Zip-up warm-up jacket with all-over sublimation. Perfect for pre-game routines and sidelines. Full team branding.",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=600&fit=crop",
-    featured: true,
-  },
-  {
-    id: "hoodie",
-    name: "Custom Hoodie",
-    category: "Casual",
-    description:
-      "Premium fleece hoodie with full sublimation print. Perfect for team warm-ups or casual wear off the court.",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=600&fit=crop",
-    featured: true,
-  },
-  {
-    id: "sando",
-    name: "Performance Sando",
-    category: "Athletic",
-    description:
-      "Lightweight tank top ideal for training and competition. Moisture-wicking fabric keeps you cool.",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=600&fit=crop",
+    id: 'Grade3_basketball_jersey',
+    name: 'Grade 3 Basketball Jersey',
+    category: 'Basketball',
+    description: 'Custom basketball jersey for Grade 3. Youth-sized with durable sublimation print.',
+    image: '/images/products/basketball/Grade3_basketball_jersey.jpg',
     featured: false,
   },
   {
-    id: "muse-uniform",
-    name: "Muse Uniform",
-    category: "Cheer/Dance",
-    description:
-      "Elegant cheer and dance uniform with custom designs. Sparkle-ready for performances and competitions.",
-    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=600&fit=crop",
+    id: 'cwnhsBison_basketball_jersey',
+    name: 'CWNHS Bison Basketball Jersey',
+    category: 'Basketball',
+    description: 'Custom basketball jersey for CWNHS Bison. Bold team colors and logo.',
+    image: '/images/products/basketball/cwnhsBison_basketball_jersey.jpg',
     featured: true,
   },
   {
-    id: "volleyball-jersey",
-    name: "Volleyball Jersey",
-    category: "Volleyball",
-    description:
-      "Lightweight, breathable volleyball jersey with custom team branding. Designed for maximum mobility.",
-    image: "",
+    id: 'clccsl_basketball_jersey',
+    name: 'CLCCSL Basketball Jersey',
+    category: 'Basketball',
+    description: 'Custom basketball jersey for CLCCSL. Professional-grade sublimation.',
+    image: '/images/products/basketball/clccsl_basketball_jersey.jpg',
     featured: false,
   },
   {
-    id: "team-uniform",
-    name: "Full Team Package",
-    category: "Team",
-    description:
-      "Complete basketball team package — jerseys, shorts, warmers, and warm-up jackets. Unified look for your entire squad.",
-    image: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600&h=600&fit=crop",
+    id: 'bugsBunny_basketball_jersey',
+    name: 'Bugs Bunny Basketball Jersey',
+    category: 'Basketball',
+    description: 'Fun themed basketball jersey featuring Bugs Bunny design. Perfect for themed tournaments.',
+    image: '/images/products/basketball/bugsBunny_basketball_jersey.jpg',
     featured: true,
   },
   {
-    id: "jacket",
-    name: "Custom Track Jacket",
-    category: "Casual",
-    description:
-      "Sleek track jacket with custom sublimation. Lightweight, stylish, and perfect for team events.",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=600&fit=crop",
+    id: 'Badac_basketball_jersey',
+    name: 'BADAC Basketball Jersey',
+    category: 'Basketball',
+    description: 'Custom basketball jersey for BADAC team. Durable construction for competitive play.',
+    image: '/images/products/basketball/Badac_basketball_jersey.jpg',
     featured: false,
   },
-];
+  {
+    id: 'basketball_photo_1',
+    name: 'Basketball Team Photo',
+    category: 'Basketball',
+    description: 'Team basketball uniform photo. Full custom kit with jerseys and shorts.',
+    image: '/images/products/basketball/772547452_1468940771922981_1637612763767548623_n.jpg',
+    featured: false,
+  },
+  {
+    id: 'basketball_photo_2',
+    name: 'Basketball Action Shot',
+    category: 'Basketball',
+    description: 'Basketball team in action wearing custom uniforms.',
+    image: '/images/products/basketball/763980644_1466199775530414_8478290936291207708_n.jpg',
+    featured: false,
+  },
+  {
+    id: 'basketball_photo_3',
+    name: 'Basketball Team Group',
+    category: 'Basketball',
+    description: 'Team group photo in custom basketball uniforms.',
+    image: '/images/products/basketball/763847785_1463314645818927_7538080778754523571_n.jpg',
+    featured: false,
+  },
+  {
+    id: 'basketball_photo_4',
+    name: 'Basketball Team Picture',
+    category: 'Basketball',
+    description: 'Official team picture in custom jerseys.',
+    image: '/images/products/basketball/762950125_1466202222196836_1756788939250183061_n.jpg',
+    featured: false,
+  },
+
+  // Volleyball
+  {
+    id: 'empress_volleyball',
+    name: 'Empress Volleyball Jersey',
+    category: 'Volleyball',
+    description: 'Custom volleyball jersey for the Empress team. Lightweight and breathable for peak performance.',
+    image: '/images/products/volleyball/empress_volleyball.jpg',
+    featured: true,
+  },
+  {
+    id: 'empressV2_volleyball',
+    name: 'Empress V2 Volleyball Jersey',
+    category: 'Volleyball',
+    description: 'Updated version of the Empress volleyball jersey. Enhanced design and fabric.',
+    image: '/images/products/volleyball/empressV2_volleyball.jpg.jpg',
+    featured: false,
+  },
+
+  // T-Shirt
+  {
+    id: 'wolfscars_tshirt',
+    name: 'Wolfscars T-Shirt',
+    category: 'T-Shirt',
+    description: 'Custom sublimated t-shirt for Wolfscars. Soft fabric with vibrant all-over print.',
+    image: '/images/products/tshirt/wolfscars_tshirt.jpg',
+    featured: true,
+  },
+  {
+    id: 'SSLG_tshirt',
+    name: 'SSLG T-Shirt',
+    category: 'T-Shirt',
+    description: 'Custom t-shirt for SSLG group. Comfortable fit with custom design.',
+    image: '/images/products/tshirt/SSLG_tshirt.jpg',
+    featured: false,
+  },
+  {
+    id: 'shinshumaru_tshirt',
+    name: 'Shinshumaru T-Shirt',
+    category: 'T-Shirt',
+    description: 'Custom t-shirt for Shinshumaru. Casual wear with team branding.',
+    image: '/images/products/tshirt/shinshumaru_tshirt.jpg',
+    featured: false,
+  },
+  {
+    id: 'magsam_tshirt',
+    name: 'Magsam T-Shirt',
+    category: 'T-Shirt',
+    description: 'Custom t-shirt for Magsam. Premium cotton with sublimated print.',
+    image: '/images/products/tshirt/magsam_tshirt.jpg',
+    featured: false,
+  },
+  {
+    id: 'kwartoKantos_tshirt',
+    name: 'Kwarto Kantos T-Shirt',
+    category: 'T-Shirt',
+    description: 'Custom t-shirt for Kwarto Kantos. Bold design with team colors.',
+    image: '/images/products/tshirt/kwartoKantos_tshirt.jpg',
+    featured: true,
+  },
+  {
+    id: 'jdsGlassworks_tshirt',
+    name: "JD's Glassworks T-Shirt",
+    category: 'T-Shirt',
+    description: 'Custom t-shirt for JD\'s Glassworks. Professional look for events.',
+    image: '/images/products/tshirt/jdsGlassworks_tshirt.jpg',
+    featured: false,
+  },
+  {
+    id: 'BSIS_tshirt',
+    name: 'BSIS T-Shirt',
+    category: 'T-Shirt',
+    description: 'Custom t-shirt for BSIS. Clean design with institutional branding.',
+    image: '/images/products/tshirt/BSIS_tshirt.jpg',
+    featured: false,
+  },
+
+  // Package / Team Uniforms
+  {
+    id: 'sientoDyes_package',
+    name: 'Siento Dyes Team Package',
+    category: 'Package',
+    description: 'Complete team uniform package for Siento Dyes. Jerseys, shorts, and warm-ups unified.',
+    image: '/images/products/package/sientoDyes_package.jpg',
+    featured: true,
+  },
+  {
+    id: 'matulatud_package',
+    name: 'Matulatud Team Package',
+    category: 'Package',
+    description: 'Full team uniform package for Matulatud. Custom designs across all pieces.',
+    image: '/images/products/package/matulatud_package.jpg',
+    featured: false,
+  },
+  {
+    id: 'lingunan_package',
+    name: 'Lingunan Team Package',
+    category: 'Package',
+    description: 'Complete uniform set for Lingunan. Coordinated team look.',
+    image: '/images/products/package/lingunan_package.jpg',
+    featured: true,
+  },
+  {
+    id: 'grade3_package',
+    name: 'Grade 3 Team Package',
+    category: 'Package',
+    description: 'Youth team uniform package for Grade 3. Durable and comfortable for young athletes.',
+    image: '/images/products/package/grade3_package.jpg',
+    featured: false,
+  },
+  {
+    id: 'dts_package',
+    name: 'DTS Team Package',
+    category: 'Package',
+    description: 'Full team uniform package for DTS. Professional sublimation across jerseys and shorts.',
+    image: '/images/products/package/dts_package.jpg',
+    featured: true,
+  },
+  {
+    id: 'bolerongThunders_package',
+    name: 'Bolerong Thunders Team Package',
+    category: 'Package',
+    description: 'Complete uniform package for Bolerong Thunders. Bold design for a bold team.',
+    image: '/images/products/package/bolerongThunders_package.jpg',
+    featured: false,
+  },
+
+  // Riding Sleeve
+  {
+    id: 'yenzhen_ridingSleeve',
+    name: 'Yenzhen Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Custom riding sleeve for Yenzhen. Premium compression fit for cycling and racing.',
+    image: '/images/products/ridingSleeve/yenzhen_ridingSleeve.jpg',
+    featured: true,
+  },
+  {
+    id: 'tondoWarriors_ridingSleeve',
+    name: 'Tondo Warriors Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Custom riding sleeve for Tondo Warriors. Team colors and logo.',
+    image: '/images/products/ridingSleeve/tondoWarriors__ridingSleeve.jpg',
+    featured: false,
+  },
+  {
+    id: 'shackingBalls_ridingSleeve',
+    name: 'Shacking Balls Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Custom riding sleeve for Shacking Balls. Bold sublimated design.',
+    image: '/images/products/ridingSleeve/shackingBalls_ridingSleeve.jpg',
+    featured: false,
+  },
+  {
+    id: 'rs8_ridingSleeve',
+    name: 'RS8 Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Custom riding sleeve for RS8. High-performance fabric.',
+    image: '/images/products/ridingSleeve/rs8_ridingSleeve.jpg',
+    featured: false,
+  },
+  {
+    id: 'php_ridingSleeve',
+    name: 'PHP Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Custom riding sleeve for PHP. Lightweight and breathable.',
+    image: '/images/products/ridingSleeve/php_ridingSleeve.jpg',
+    featured: false,
+  },
+  {
+    id: 'helloKitty_ridingSleeve',
+    name: 'Hello Kitty Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Fun themed riding sleeve featuring Hello Kitty design. Stand out on the track.',
+    image: '/images/products/ridingSleeve/helloKitty_ridingSleeve.jpg',
+    featured: true,
+  },
+  {
+    id: 'bornToRide_ridingSleeve',
+    name: 'Born to Ride Riding Sleeve',
+    category: 'Riding Sleeve',
+    description: 'Custom riding sleeve with "Born to Ride" design. Perfect for cycling enthusiasts.',
+    image: '/images/products/ridingSleeve/bornToRide_ridingSleeve.jpg',
+    featured: false,
+  },
+
+  // Warmer
+  {
+    id: 'tropaKhupzz_warmer',
+    name: 'Tropa Khupzz Warmer',
+    category: 'Warmer',
+    description: 'Custom thermal warmer for Tropa Khupzz. Keep warm during cold games.',
+    image: '/images/products/warmer/tropaKhupzz_warmer.jpg',
+    featured: true,
+  },
+  {
+    id: 'tondoWarriors_warmer',
+    name: 'Tondo Warriors Warmer',
+    category: 'Warmer',
+    description: 'Custom warmer for Tondo Warriors. Team-branded thermal gear.',
+    image: '/images/products/warmer/tondoWarriors_warmer.jpg',
+    featured: false,
+  },
+  {
+    id: 'shinshumaru_warmer',
+    name: 'Shinshumaru Warmer',
+    category: 'Warmer',
+    description: 'Custom warmer for Shinshumaru. Lightweight thermal compression.',
+    image: '/images/products/warmer/shinshumaru_warmer.jpg',
+    featured: false,
+  },
+  {
+    id: 'greatTaste_warmer',
+    name: 'Great Taste Warmer',
+    category: 'Warmer',
+    description: 'Custom warmer for Great Taste. Classic design with modern thermal technology.',
+    image: '/images/products/warmer/greatTaste_warmer.jpg',
+    featured: false,
+  },
+  {
+    id: 'DTS_warmer',
+    name: 'DTS Warmer',
+    category: 'Warmer',
+    description: 'Custom warmer for DTS. Professional thermal wear for athletes.',
+    image: '/images/products/warmer/DTS_warmer.jpg',
+    featured: false,
+  },
+]
 
 export const categories = [
-  "All",
-  "Basketball",
-  "Volleyball",
-  "Athletic",
-  "Casual",
-  "Cheer/Dance",
-  "Team",
-];
+  'All',
+  'Basketball',
+  'Volleyball',
+  'T-Shirt',
+  'Warmer',
+  'Package',
+  'Riding Sleeve',
+]
