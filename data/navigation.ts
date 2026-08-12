@@ -4,12 +4,12 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { name: "Products", href: "/#products" },
+  { name: "Products", href: "/products" },
   { name: "Team Packages", href: "/#team-packages" },
-  { name: "Gallery", href: "/#gallery" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Services", href: "/#services" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const socialLinks = [

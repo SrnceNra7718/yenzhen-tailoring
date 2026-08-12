@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Sparkles } from 'lucide-react'
-import { navLinks, socialLinks, contactInfo } from '@/data/navigation'
+import Link from "next/link";
+// Replaced Sparkles icon with favicon image
+import { navLinks, socialLinks, contactInfo } from "@/data/navigation";
 
 export function Footer() {
   return (
@@ -12,21 +12,26 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-gold-500 shadow-lg shadow-brand-500/20">
-                <Sparkles className="h-5 w-5 text-white" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-gold-500 shadow-lg shadow-brand-500/20 overflow-hidden">
+                <img
+                  src="/favicon.png"
+                  alt="YENZHEN logo"
+                  className="h-8 w-8 object-contain"
+                />
               </div>
-              <span className="font-brush text-xl text-white">
-                YENZHEN
-              </span>
+              <span className="font-brush text-xl text-white">YENZHEN</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Premium sublimation basketball uniforms and team packages. Designed for performance, built to last.
+              Premium sublimation basketball uniforms and team packages.
+              Designed for performance, built to last.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="font-display font-semibold text-foreground mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -43,7 +48,9 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Contact</h4>
+            <h4 className="font-display font-semibold text-foreground mb-4">
+              Contact
+            </h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li>{contactInfo.email}</li>
               <li>{contactInfo.phone}</li>
@@ -69,11 +76,21 @@ export function Footer() {
             © {new Date().getFullYear()} Yenzhen Tailoring. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
+            <Link
+              href="/privacy"
+              className="hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="hover:text-foreground transition-colors"
+            >
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
