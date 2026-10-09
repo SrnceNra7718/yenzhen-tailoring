@@ -93,49 +93,53 @@ export default function GalleryPage() {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+            key={selected?.id}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
           >
-            <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-              <Image
-                src={selected.src}
-                alt={selected.alt}
-                width={1200}
-                height={800}
-                className="w-full h-auto rounded-xl"
-              />
-              <button
-                onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/30 rounded-full p-2"
-                aria-label="Close lightbox"
-              >
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 6 6 18" /><path d="m6 6 12 12" />
-                </svg>
-              </button>
-              {galleryItems.length > 1 && (
-                <>
+              <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+                <div className="relative w-full h-[80vh]">
+                  <Image
+                    src={selected.src}
+                    alt={selected.alt}
+                    fill
+                    sizes="(max-width: 1024px) 90vw, 80vw"
+                    loading="eager"
+                    className="object-contain rounded-xl"
+                  />
                   <button
-                    onClick={() => navigateImage('prev')}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 rounded-full p-2"
-                    aria-label="Previous"
+                    onClick={() => setSelected(null)}
+                    className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/30 rounded-full p-2"
+                    aria-label="Close lightbox"
                   >
-                    <ArrowLeft className="h-6 w-6" />
+                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+                    </svg>
                   </button>
-                  <button
-                    onClick={() => navigateImage('next')}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 rounded-full p-2"
-                    aria-label="Next"
-                  >
-                    <ArrowRight className="h-6 w-6" />
-                  </button>
-                </>
-              )}
-              <p className="mt-4 text-center text-white font-medium">{selected.title}</p>
-            </div>
+                  {galleryItems.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => navigateImage('prev')}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 rounded-full p-2"
+                        aria-label="Previous"
+                      >
+                        <ArrowLeft className="h-6 w-6" />
+                      </button>
+                      <button
+                        onClick={() => navigateImage('next')}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 rounded-full p-2"
+                        aria-label="Next"
+                      >
+                        <ArrowRight className="h-6 w-6" />
+                      </button>
+                    </>
+                  )}
+                </div>
+                <p className="mt-4 text-center text-white font-medium">{selected.title}</p>
+              </div>
           </motion.div>
         )}
       </AnimatePresence>
